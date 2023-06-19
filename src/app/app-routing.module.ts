@@ -1,3 +1,4 @@
+import { PorteiroCreateComponent } from './components/porteiro/porteiro-create/porteiro-create.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
     path:'', component: NavComponent ,children:  [
       {path:'home', component: HomeComponent },
       {path:'porteiro', component: PorteiroListComponent },
+      {path:'porteiro/create', component: PorteiroCreateComponent }
     ]
   },
  

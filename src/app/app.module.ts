@@ -34,6 +34,7 @@ import { PorteiroListComponent } from './components/porteiro/porteiro-list/porte
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { PorteiroCreateComponent } from './components/porteiro/porteiro-create/porteiro-create.component';
 
 
 
@@ -46,6 +47,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     HeaderComponent,
     PorteiroListComponent,
     LoginComponent,
+    PorteiroCreateComponent,
    
   ],
   imports: [
