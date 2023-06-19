@@ -2,16 +2,20 @@ import { Injectable } from '@angular/core';
 import { Credenciais } from '../models/credenciais';
 import { HttpClient } from '@angular/common/http';
 import { API_CONFIG } from '../config/api.config';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  jwtService: JwtHelperService =  new JwtHelperService();
+  http: any;
+
   constructor(private htttp: HttpClient) { }
 
   authenticate(creds: Credenciais){
-return this.htttp.post(`${API_CONFIG.baseUrl}/login`, creds, {
+return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
   observe:'response',
  responseType: 'text'
 
@@ -19,7 +23,19 @@ return this.htttp.post(`${API_CONFIG.baseUrl}/login`, creds, {
 
 
 }
+successfulLogin(authToken: string){
+  localStorage.setItem('token', authToken);
+}
 
-
+  isAuthenticated() {
+    let token = localStorage.getItem('token')
+    if(token != null) {
+     return !this.jwtService.isTokenExpired(token)
+    }
+   return false
+}
+logout(){
+  localStorage.clear();
+}
   }
 

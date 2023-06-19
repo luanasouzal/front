@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Credenciais } from 'src/app/models/credenciais';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private toast: ToastrService,
-    private service: AuthService
+    private service: AuthService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -31,7 +33,11 @@ export class LoginComponent implements OnInit{
 
   logar(){
     this.service.authenticate(this.creds).subscribe(resposta => {
-      this.toast.info(resposta.headers.get('Authorization'))
+     this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
+     this.router.navigate(['']);
+
+    }, () => {
+      this.toast.error('Usuario e/ou senha invalidos');
     })
 
   }
@@ -40,8 +46,5 @@ export class LoginComponent implements OnInit{
     return this.email.valid && this.senha.valid
   }
 
-}
-function validaCampos() {
-  throw new Error('Function not implemented.');
 }
 

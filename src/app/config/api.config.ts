@@ -1,3 +1,3 @@
 export const API_CONFIG = {
-    baseUrl: 'localhost:4200/login'
+    baseUrl: 'https://securegate-prod-f8a96e95904e.herokuapp.com'
 }
