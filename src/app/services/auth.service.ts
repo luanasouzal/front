@@ -10,9 +10,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
 
   jwtService: JwtHelperService =  new JwtHelperService();
-  http: any;
+  //http: any;
 
-  constructor(private htttp: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   authenticate(creds: Credenciais){
 return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {

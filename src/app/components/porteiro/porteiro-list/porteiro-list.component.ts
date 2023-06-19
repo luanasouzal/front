@@ -11,28 +11,7 @@ import { PorteiroService } from 'src/app/services/porteiro.service';
 })
 export class PorteiroListComponent implements OnInit {
 
-  ELEMENT_DATA: Porteiro[] = [
-    {
-      id:1,
-      nome: 'Augusto',
-      cpf: '123.456.789-05',
-      email: 'augusto@mail.com',
-      senha: '123',
-      perfis: ['0'],
-      dataCriacao: '15/05/2023',
-
-    },
-    {
-      id:2,
-      nome: 'Luana Souza',
-      cpf: '123.456.789-02',
-      email: 'luana@gmail.com',
-      senha: '1234',
-      perfis: ['0'],
-      dataCriacao: '15/05/2023',
-
-    }
-  ]
+  ELEMENT_DATA: Porteiro[] = []
   
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','acoes'];
   dataSource = new MatTableDataSource<Porteiro>(this.ELEMENT_DATA);

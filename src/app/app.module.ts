@@ -35,6 +35,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PorteiroCreateComponent } from './components/porteiro/porteiro-create/porteiro-create.component';
+import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
 
 
 
@@ -81,7 +82,8 @@ import { PorteiroCreateComponent } from './components/porteiro/porteiro-create/p
       closeButton: true,
       progressBar: true
       
-     } )
+     } ),
+  
     
   ],
   providers: [AuthInterceptorProvider],

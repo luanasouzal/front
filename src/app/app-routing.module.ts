@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   
   {
-    path:'', component: NavComponent ,children:  [
+    path:'', component: NavComponent, canActivate:[AuthGuard] ,children:  [
       {path:'home', component: HomeComponent },
       {path:'porteiro', component: PorteiroListComponent },
       {path:'porteiro/create', component: PorteiroCreateComponent }
