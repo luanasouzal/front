@@ -41,6 +41,7 @@ import { MoradorCreateComponent } from './components/morador/morador-create/mora
 import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
 import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
 import { MoradorListComponent } from './components/morador/morador-list/morador-list.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 
 
 
@@ -59,7 +60,8 @@ import { MoradorListComponent } from './components/morador/morador-list/morador-
     MoradorCreateComponent,
     MoradorDeleteComponent,
     MoradorUpdateComponent,
-    MoradorListComponent
+    MoradorListComponent,
+    ChamadoListComponent
     
   
   ],

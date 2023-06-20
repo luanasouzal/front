@@ -12,6 +12,7 @@ import { MoradorListComponent } from './components/morador/morador-list/morador-
 import { MoradorCreateComponent } from './components/morador/morador-create/morador-create.component';
 import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
 import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 
 
 const routes: Routes = [
@@ -27,10 +28,14 @@ const routes: Routes = [
       {path:'porteiro/update/:id', component: PorteiroUpdateComponent },
       {path:'porteiro/delete/:id', component: PorteiroDeleteComponent },
 
-    {path:'morador', component: MoradorListComponent },
-    {path:'morador/create', component: MoradorCreateComponent },
-    {path:'morador/update/:id', component: MoradorUpdateComponent },
-   {path:'morador/delete/:id', component: MoradorDeleteComponent },
+      {path:'morador', component: MoradorListComponent },
+      {path:'morador/create', component: MoradorCreateComponent },
+      {path:'morador/update/:id', component: MoradorUpdateComponent },
+      {path:'morador/delete/:id', component: MoradorDeleteComponent },
+
+      {path:'chamados', component: ChamadoListComponent },
+
+
     ]
   },
  
