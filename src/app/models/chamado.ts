@@ -4,7 +4,7 @@ export interface Chamado{
     dataEntrada?: string;
     dataSaida?: string;
     status: string;
-    descricao: string;
+    observacoes: string;
     porteiro: string;
     morador: string;
     nomePorteiro: string;

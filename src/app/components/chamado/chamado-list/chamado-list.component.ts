@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chamado } from 'src/app/models/chamado';
+import { ChamadoService } from 'src/app/services/chamado.service';
 
 @Component({
   selector: 'app-chamado-list',
@@ -10,37 +11,60 @@ import { Chamado } from 'src/app/models/chamado';
 })
 export class ChamadoListComponent implements OnInit{
 
-  ELEMENT_DATA: Chamado[] = [
-    {
-      id: 1,
-      dataEntrada: '22/04/2023',
-      dataSaida: '22/04/2023',
-      status: 'Morador',
-      descricao: 'apartamento 902',
-      porteiro: '1',
-      morador: '1',
-      nomePorteiro: 'Valdir;',
-      nomeMorador: 'Sabrina'
+  ELEMENT_DATA: Chamado[] = []
+  FILTERED_DATA: Chamado[] = []
   
-    }
-  ]
-  
-  displayedColumns: string[] = ['id', 'descricao','morador', 'status','porteiro','dataEntrada', 'dataSaida','acoes'];
+  displayedColumns: string[] = ['id', 'observacoes','morador', 'status','porteiro','dataEntrada', 'dataSaida','acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
 
-  constructor(){}
+
+  constructor(
+    private service: ChamadoService
+  ){}
   
   ngOnInit(): void {
+    this.findAll();
       
+  }
+
+  
+  findAll():void {
+    this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta;
+      this.dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
+      this.dataSource.paginator = this.paginator;
+      
+    })
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  retornaStatus(status: any): string{
+    if (status == '0'){
+      return 'ABERTO'
+    }else {
+      return 'FECHADO'
+    }
+
+  }
+
+  orderByStatus(status: any): void{
+    let list: Chamado[] = []
+    this.ELEMENT_DATA.forEach(element => {
+      if(element.status == status)
+        list.push(element)
+    });
+    this.FILTERED_DATA = list;
+    this.dataSource = new MatTableDataSource<Chamado>(list);
+    this.dataSource.paginator = this.paginator;
+  }
+
+
   }
 
