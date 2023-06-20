@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -6,13 +6,11 @@ import { Porteiro } from 'src/app/models/porteiro';
 import { PorteiroService } from 'src/app/services/porteiro.service';
 
 @Component({
-  selector: 'app-porteiro-create',
-  templateUrl: './porteiro-create.component.html',
-  styleUrls: ['./porteiro-create.component.css']
+  selector: 'app-porteiro-update',
+  templateUrl: './porteiro-update.component.html',
+  styleUrls: ['./porteiro-update.component.css']
 })
-export class PorteiroCreateComponent implements OnInit {
-
-
+export class PorteiroUpdateComponent {
   porteiro: Porteiro = {
     nome: '',
     cpf: '',
@@ -31,14 +29,26 @@ export class PorteiroCreateComponent implements OnInit {
     private service: PorteiroService,
     private tosat: ToastrService,
     private router: Router,
+    private route: ActivatedRoute,
   ){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-create(): void{
+    this.porteiro.id  = this.route.snapshot.paramMap.get('id');
+    this.findById();
+  }
+
+  findById(): void{
+    this.service.findById(this.porteiro.id).subscribe(resposta =>{
+      resposta.perfis = []
+      this.porteiro = resposta;
+    })
+  }
+
+update(): void{
  
-    this.service.create(this.porteiro).subscribe( ()=>{
-    this.tosat.success('Cadastrado com sucesso', 'Cadastro');
+    this.service.update(this.porteiro).subscribe( ()=>{
+    this.tosat.success('Atualizado com sucesso', 'Update');
     this.router.navigate(['porteiros'])
 
   }, ex => {
@@ -72,3 +82,6 @@ validaCampos(): boolean{
    this.email.valid &&  this.senha.valid
 }
 }
+
+
+

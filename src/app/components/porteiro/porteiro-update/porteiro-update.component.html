@@ -1,12 +1,12 @@
 <div class="container mat-elevation-z8">
     <form action="" class="form">
 
-        <h1 class ="fullWidth"> Cadastrar Porteiro ou Sindico</h1>
+        <h1 class ="fullWidth">Atualizar Porteiro ou Sindico</h1>
         <img class ="fullWidth"src="assets/img/portaria.jpg" alt="Secure Gate- Gestão de Condominio">
 
         <section class="section">
             <mat-checkbox  (click)="addPerfil(0)" class="margin" color="primary" >Admin</mat-checkbox>
-            <mat-checkbox  (click)="addPerfil(1)"  class="margin" color="primary" >Porteiro</mat-checkbox>
+            <mat-checkbox  (click)="addPerfil(1)" [checked]="true" class="margin" color="primary" >Porteiro</mat-checkbox>
             <mat-checkbox  (click)="addPerfil(2)" class="margin"color="primary"   >Sindico</mat-checkbox>
           </section>
 
@@ -62,8 +62,8 @@
               <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
 
-              <button (click)="create()" [disabled]="!validaCampos ()" class ="fullWidth mat-elevation-z4" mat-flat-button color="primary">Cadastrar</button>
-              <button routerLink="../" class ="fullWidth mat-elevation-z4" mat-flat-button color="warn">Cancelar</button>
+              <button (click)="update()" [disabled]="!validaCampos ()" class ="fullWidth mat-elevation-z4" mat-flat-button color="primary">Atualizar</button>
+              <button routerLink="../../" class ="fullWidth mat-elevation-z4" mat-flat-button color="warn">Cancelar</button>
         
 
 

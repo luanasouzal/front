@@ -6,6 +6,13 @@ import { HomeComponent } from './components/home/home.component';
 import { PorteiroListComponent } from './components/porteiro/porteiro-list/porteiro-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PorteiroUpdateComponent } from './components/porteiro/porteiro-update/porteiro-update.component';
+import { PorteiroDeleteComponent } from './components/porteiro/porteiro-delete/porteiro-delete.component';
+import { MoradorListComponent } from './components/morador/morador-list/morador-list.component';
+import { MoradorCreateComponent } from './components/morador/morador-create/morador-create.component';
+import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
+import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
+
 
 const routes: Routes = [
 
@@ -14,8 +21,16 @@ const routes: Routes = [
   {
     path:'', component: NavComponent, canActivate:[AuthGuard] ,children:  [
       {path:'home', component: HomeComponent },
+
       {path:'porteiro', component: PorteiroListComponent },
-      {path:'porteiro/create', component: PorteiroCreateComponent }
+      {path:'porteiro/create', component: PorteiroCreateComponent },
+      {path:'porteiro/update/:id', component: PorteiroUpdateComponent },
+      {path:'porteiro/delete/:id', component: PorteiroDeleteComponent },
+
+    {path:'morador', component: MoradorListComponent },
+    {path:'morador/create', component: MoradorCreateComponent },
+    {path:'morador/update/:id', component: MoradorUpdateComponent },
+   {path:'morador/delete/:id', component: MoradorDeleteComponent },
     ]
   },
  

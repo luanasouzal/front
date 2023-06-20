@@ -1,13 +1,13 @@
 <div class="container mat-elevation-z8">
     <form action="" class="form">
 
-        <h1 class ="fullWidth"> Cadastrar Porteiro ou Sindico</h1>
+        <h1 class ="fullWidth">Deletar Porteiro ou Sindico</h1>
         <img class ="fullWidth"src="assets/img/portaria.jpg" alt="Secure Gate- Gestão de Condominio">
 
         <section class="section">
-            <mat-checkbox  (click)="addPerfil(0)" class="margin" color="primary" >Admin</mat-checkbox>
-            <mat-checkbox  (click)="addPerfil(1)"  class="margin" color="primary" >Porteiro</mat-checkbox>
-            <mat-checkbox  (click)="addPerfil(2)" class="margin"color="primary"   >Sindico</mat-checkbox>
+            <mat-checkbox    [disabled]="true" class="margin" color="primary" >Admin</mat-checkbox>
+            <mat-checkbox    [disabled]="true" class="margin" color="primary" >Porteiro</mat-checkbox>
+            <mat-checkbox    [disabled]="true" class="margin"color="primary"   >Sindico</mat-checkbox>
           </section>
 
         
@@ -16,9 +16,8 @@
               <input 
               [(ngModel)] = "porteiro.nome"
               name="nome"
-              [formControl] = "nome"
-              required
-              matInput placeholder="Ex... Fulano de Tal ">
+              [disabled]="true"
+              matInput>
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
         
@@ -29,9 +28,8 @@
               <input
               [(ngModel)] = "porteiro.cpf"
               name="cpf"
-              [formControl] = "cpf"
-              required
-               matInput placeholder="Ex... 000.000.000-00">
+              [disabled]="true"
+              matInput>
               <mat-icon matSuffix>pin</mat-icon>
             </mat-form-field>
         
@@ -42,9 +40,8 @@
               <input 
               [(ngModel)] = "porteiro.email"
               name="email"
-              [formControl] = "email"
-              required
-              matInput placeholder="Ex... fulano@mail.com">
+              [disabled]="true"
+              matInput>
               <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
          
@@ -55,15 +52,14 @@
               <input 
               [(ngModel)] = "porteiro.senha"
               name="senha"
-              [formControl] = "senha"
-              required
-              type="password"
-              matInput placeholder="Ex... 123">
+              [disabled]="true"
+              matInput
+              type="password">
               <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
 
-              <button (click)="create()" [disabled]="!validaCampos ()" class ="fullWidth mat-elevation-z4" mat-flat-button color="primary">Cadastrar</button>
-              <button routerLink="../" class ="fullWidth mat-elevation-z4" mat-flat-button color="warn">Cancelar</button>
+              <button (click)="delete()" class ="fullWidth mat-elevation-z4" mat-flat-button color="primary">Deletar</button>
+              <button routerLink="../../" class ="fullWidth mat-elevation-z4" mat-flat-button color="warn">Cancelar</button>
         
 
 

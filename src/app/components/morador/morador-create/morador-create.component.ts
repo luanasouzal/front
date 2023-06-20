@@ -2,18 +2,18 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { Porteiro } from 'src/app/models/porteiro';
-import { PorteiroService } from 'src/app/services/porteiro.service';
+import { Morador } from 'src/app/models/morador';
+import { MoradorService } from 'src/app/services/morador.service';
 
 @Component({
-  selector: 'app-porteiro-create',
-  templateUrl: './porteiro-create.component.html',
-  styleUrls: ['./porteiro-create.component.css']
+  selector: 'app-morador-create',
+  templateUrl: './morador-create.component.html',
+  styleUrls: ['./morador-create.component.css']
 })
-export class PorteiroCreateComponent implements OnInit {
+export class MoradorCreateComponent implements OnInit {
 
 
-  porteiro: Porteiro = {
+  morador: Morador = {
     nome: '',
     cpf: '',
     email: '',
@@ -28,7 +28,7 @@ export class PorteiroCreateComponent implements OnInit {
 
 
   constructor(
-    private service: PorteiroService,
+    private service: MoradorService,
     private tosat: ToastrService,
     private router: Router,
   ){}
@@ -37,9 +37,9 @@ export class PorteiroCreateComponent implements OnInit {
 
 create(): void{
  
-    this.service.create(this.porteiro).subscribe( ()=>{
+    this.service.create(this.morador).subscribe( ()=>{
     this.tosat.success('Cadastrado com sucesso', 'Cadastro');
-    this.router.navigate(['porteiros'])
+    this.router.navigate(['moradors'])
 
   }, ex => {
     console.log(ex);
@@ -56,13 +56,13 @@ create(): void{
 
 addPerfil(perfil: any): void {
 
-if(this.porteiro.perfis.includes(perfil)){
-  this.porteiro.perfis.splice( this.porteiro.perfis.indexOf(perfil),1)
-  console.log(this.porteiro.perfis);
+if(this.morador.perfis.includes(perfil)){
+  this.morador.perfis.splice( this.morador.perfis.indexOf(perfil),1)
+  console.log(this.morador.perfis);
 
 }else{
-  this.porteiro.perfis.push(perfil);
-  console.log(this.porteiro.perfis);
+  this.morador.perfis.push(perfil);
+  console.log(this.morador.perfis);
 }
 
 }

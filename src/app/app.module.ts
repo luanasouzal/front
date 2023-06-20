@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -36,6 +35,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PorteiroCreateComponent } from './components/porteiro/porteiro-create/porteiro-create.component';
 import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
+import { PorteiroUpdateComponent } from './components/porteiro/porteiro-update/porteiro-update.component';
+import { PorteiroDeleteComponent } from './components/porteiro/porteiro-delete/porteiro-delete.component';
+import { MoradorCreateComponent } from './components/morador/morador-create/morador-create.component';
+import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
+import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
+import { MoradorListComponent } from './components/morador/morador-list/morador-list.component';
 
 
 
@@ -49,7 +54,14 @@ import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
     PorteiroListComponent,
     LoginComponent,
     PorteiroCreateComponent,
-   
+    PorteiroUpdateComponent,
+    PorteiroDeleteComponent,
+    MoradorCreateComponent,
+    MoradorDeleteComponent,
+    MoradorUpdateComponent,
+    MoradorListComponent
+    
+  
   ],
   imports: [
     

@@ -1,20 +1,20 @@
 <div class="container mat-elevation-z8">
     <form action="" class="form">
 
-        <h1 class ="fullWidth"> Cadastrar Porteiro ou Sindico</h1>
+        <h1 class ="fullWidth"> Cadastrar Morador ou Visitante</h1>
         <img class ="fullWidth"src="assets/img/portaria.jpg" alt="Secure Gate- Gestão de Condominio">
 
         <section class="section">
-            <mat-checkbox  (click)="addPerfil(0)" class="margin" color="primary" >Admin</mat-checkbox>
-            <mat-checkbox  (click)="addPerfil(1)"  class="margin" color="primary" >Porteiro</mat-checkbox>
-            <mat-checkbox  (click)="addPerfil(2)" class="margin"color="primary"   >Sindico</mat-checkbox>
+         
+            <mat-checkbox  (click)="addPerfil(1)"  class="margin" color="primary" >Morador</mat-checkbox>
+            <mat-checkbox  (click)="addPerfil(2)" class="margin"color="primary"   >Visitante</mat-checkbox>
           </section>
 
         
             <mat-form-field class ="fullWidth" appearance="fill">
               <mat-label>Nome</mat-label>
               <input 
-              [(ngModel)] = "porteiro.nome"
+              [(ngModel)] = "morador.nome"
               name="nome"
               [formControl] = "nome"
               required
@@ -27,7 +27,7 @@
             <mat-form-field class ="fullWidth" appearance="fill">
               <mat-label>CPF</mat-label>
               <input
-              [(ngModel)] = "porteiro.cpf"
+              [(ngModel)] = "morador.cpf"
               name="cpf"
               [formControl] = "cpf"
               required
@@ -40,7 +40,7 @@
             <mat-form-field class ="fullWidth" appearance="fill">
               <mat-label>Email</mat-label>
               <input 
-              [(ngModel)] = "porteiro.email"
+              [(ngModel)] = "morador.email"
               name="email"
               [formControl] = "email"
               required
@@ -53,7 +53,7 @@
             <mat-form-field class ="fullWidth" appearance="fill">
               <mat-label>Senha</mat-label>
               <input 
-              [(ngModel)] = "porteiro.senha"
+              [(ngModel)] = "morador.senha"
               name="senha"
               [formControl] = "senha"
               required

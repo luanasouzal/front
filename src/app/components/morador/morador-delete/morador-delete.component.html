@@ -1,0 +1,67 @@
+<div class="container mat-elevation-z8">
+    <form action="" class="form">
+
+        <h1 class ="fullWidth">Deletar Morador ou Visitante</h1>
+        <img class ="fullWidth"src="assets/img/portaria.jpg" alt="Secure Gate- Gestão de Condominio">
+
+        <section class="section">
+            <mat-checkbox    [disabled]="true" class="margin" color="primary" >Morador</mat-checkbox>
+            <mat-checkbox    [disabled]="true" class="margin"color="primary"   >Visitante</mat-checkbox>
+          </section>
+
+        
+            <mat-form-field class ="fullWidth" appearance="fill">
+              <mat-label>Nome</mat-label>
+              <input 
+              [(ngModel)] = "morador.nome"
+              name="nome"
+              [disabled]="true"
+              matInput>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        
+
+        
+            <mat-form-field class ="fullWidth" appearance="fill">
+              <mat-label>CPF</mat-label>
+              <input
+              [(ngModel)] = "morador.cpf"
+              name="cpf"
+              [disabled]="true"
+              matInput>
+              <mat-icon matSuffix>pin</mat-icon>
+            </mat-form-field>
+        
+
+         
+            <mat-form-field class ="fullWidth" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input 
+              [(ngModel)] = "morador.email"
+              name="email"
+              [disabled]="true"
+              matInput>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+         
+
+       
+            <mat-form-field class ="fullWidth" appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input 
+              [(ngModel)] = "morador.senha"
+              name="senha"
+              [disabled]="true"
+              matInput
+              type="password">
+              <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+
+              <button (click)="delete()" class ="fullWidth mat-elevation-z4" mat-flat-button color="primary">Deletar</button>
+              <button routerLink="../../" class ="fullWidth mat-elevation-z4" mat-flat-button color="warn">Cancelar</button>
+        
+
+
+    </form>
+
+</div>
