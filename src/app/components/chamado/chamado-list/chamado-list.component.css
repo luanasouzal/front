@@ -27,3 +27,10 @@ h1{
 .delete{
     color: rgb(238, 7, 7)
 }
+
+mat-radio-group {
+display:  flex;
+color:rgb(8, 112, 128);
+margin-bottom: 1rem;
+
+}

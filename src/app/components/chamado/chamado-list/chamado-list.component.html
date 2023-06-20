@@ -8,18 +8,19 @@
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
     </mat-form-field>
+
+    <mat-radio-group color="primary">
+        <mat-radio-button  >ABERTO</mat-radio-button>
+        <mat-radio-button  >FECHADO</mat-radio-button>
+      </mat-radio-group>
+  
   
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="ELEMENT_DATA">
       
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> ID do Porteiro </th>
+            <th mat-header-cell *matHeaderCellDef> ID </th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
-    
-          <ng-container matColumnDef="morador">
-            <th mat-header-cell *matHeaderCellDef> Morador / Visitante </th>
-            <td mat-cell *matCellDef="let element"> {{element.nomeMorador}} </td>
           </ng-container>
 
           <ng-container matColumnDef="descricao">
@@ -27,27 +28,38 @@
             <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
           </ng-container>
 
+          <ng-container matColumnDef="morador">
+            <th mat-header-cell *matHeaderCellDef> Morador / Visitante </th>
+            <td mat-cell *matCellDef="let element"> {{element.nomeMorador}} </td>
+          </ng-container>
+
           <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
             <td mat-cell *matCellDef="let element"> {{element.status}} </td>
           </ng-container>
+
+          <ng-container matColumnDef="porteiro">
+            <th mat-header-cell *matHeaderCellDef> Porteiro </th>
+            <td mat-cell *matCellDef="let element"> {{element.nomePorteiro}} </td>
+          </ng-container>
+
       
           <ng-container matColumnDef="dataEntrada">
-            <th mat-header-cell *matHeaderCellDef> Data de Entrada </th>
+            <th mat-header-cell *matHeaderCellDef> Data Entrada </th>
             <td mat-cell *matCellDef="let element"> {{element.dataEntrada}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="dataSaida">
-            <th mat-header-cell *matHeaderCellDef> Data de Saída </th>
+      <ng-container matColumnDef="dataSaida">
+            <th mat-header-cell *matHeaderCellDef> Data Saída </th>
             <td mat-cell *matCellDef="let element"> {{element.dataSaida}} </td>
           </ng-container>
   
-    
+
            
              <ng-container matColumnDef="acoes">
               <th mat-header-cell *matHeaderCellDef> Ações </th>
               <td mat-cell *matCellDef="let element"> 
-                <a routerLink="update/{{ element.id}}">
+                <a routerLink="">
                   <i class="material-icons edit">edit</i>
                  </a>
                  <a routerLink="">

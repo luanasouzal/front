@@ -24,6 +24,6 @@ export class NavComponent implements OnInit {
   logout(){
     this.router.navigate(['login'])
     this.AuthService.logout();
-    this.toast.info('Logout realizado com sucesso', 'Logout', {timeOut: 7000})
+    this.toast.info('Logout realizado com sucesso', 'Logout', {timeOut: 5000})
   }
 }
