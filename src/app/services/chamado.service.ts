@@ -13,7 +13,7 @@ export class ChamadoService {
   constructor(private http: HttpClient) { }
 
 findById(id: any): Observable<Chamado> {
-    return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/${id}`);
+    return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/controles/${id}`);
   } 
 
 findAll(): Observable<Chamado[]>{
@@ -22,11 +22,11 @@ findAll(): Observable<Chamado[]>{
 
 create(chamado: Chamado): Observable<Chamado>
 {
-  return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
+  return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/controles`, chamado);
 }
 
 update(chamado: Chamado): Observable<Chamado>
 {
-  return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados/${chamado.id}`,chamado );
+  return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/controles/${chamado.id}`,chamado );
 }
 }
