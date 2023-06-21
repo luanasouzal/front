@@ -12,9 +12,11 @@ import { MoradorListComponent } from './components/morador/morador-list/morador-
 import { MoradorCreateComponent } from './components/morador/morador-create/morador-create.component';
 import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
 import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
-import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
-import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
-import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ControleListComponent } from './components/controle/controle-list/controle-list.component';
+import { ControleCreateComponent } from './components/controle/controle-create/controle-create.component';
+import { ControleUpdateComponent } from './components/controle/controle-update/controle-update.component';
+import { ControleReadComponent } from './components/controle/controle-read/controle-read.component';
+
 
 
 const routes: Routes = [
@@ -35,9 +37,11 @@ const routes: Routes = [
       {path:'morador/update/:id', component: MoradorUpdateComponent },
       {path:'morador/delete/:id', component: MoradorDeleteComponent },
 
-      {path:'chamados', component: ChamadoListComponent },
-      {path:'chamados/create', component: ChamadoCreateComponent },
-      {path:'chamados/update/:id', component: ChamadoUpdateComponent },
+      {path:'controles', component: ControleListComponent },
+      {path:'controles/create', component: ControleCreateComponent },
+      {path:'controles/update/:id', component: ControleUpdateComponent },
+      {path:'controles/read/:id', component: ControleReadComponent },
+     
 
     ]
   },

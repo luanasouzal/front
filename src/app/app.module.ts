@@ -41,9 +41,12 @@ import { MoradorCreateComponent } from './components/morador/morador-create/mora
 import { MoradorDeleteComponent } from './components/morador/morador-delete/morador-delete.component';
 import { MoradorUpdateComponent } from './components/morador/morador-update/morador-update.component';
 import { MoradorListComponent } from './components/morador/morador-list/morador-list.component';
-import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
-import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
-import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+
+
+import { ControleListComponent } from './components/controle/controle-list/controle-list.component';
+import { ControleCreateComponent } from './components/controle/controle-create/controle-create.component';
+import { ControleUpdateComponent } from './components/controle/controle-update/controle-update.component';
+import { ControleReadComponent } from './components/controle/controle-read/controle-read.component';
 
 
 
@@ -63,9 +66,11 @@ import { ChamadoUpdateComponent } from './components/chamado/chamado-update/cham
     MoradorDeleteComponent,
     MoradorUpdateComponent,
     MoradorListComponent,
-    ChamadoListComponent,
-    ChamadoCreateComponent,
-    ChamadoUpdateComponent
+    ControleListComponent,
+    ControleCreateComponent,
+    ControleUpdateComponent,
+    ControleReadComponent,
+   
     
   
   ],

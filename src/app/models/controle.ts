@@ -1,5 +1,5 @@
-import { Morador } from 'src/app/models/morador';
-export interface Chamado{
+
+export interface Controle{
     id?: any;
     dataEntrada?: string;
     dataSaida?: string;
