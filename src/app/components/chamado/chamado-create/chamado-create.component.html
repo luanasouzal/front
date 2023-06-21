@@ -10,7 +10,8 @@
             <mat-select 
             [(ngModel)]="chamado.status" 
             name="status"
-            [formControl]="status" required>
+            [formControl]="status" required
+            name="status">
               <mat-option value="0">ABERTO</mat-option>
               <mat-option value="1">FECHADO</mat-option>
             </mat-select>
