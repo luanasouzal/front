@@ -22,6 +22,7 @@ export class ChamadoCreateComponent implements OnInit {
     observacoes: '',
     porteiro: '',
     morador: '', 
+    dataEntrada:'',
     nomePorteiro:'',
     nomeMorador:'', 
      
@@ -35,6 +36,7 @@ export class ChamadoCreateComponent implements OnInit {
   observacoes:FormControl = new FormControl(null, [Validators.required]);
   porteiro:    FormControl = new FormControl(null, [Validators.required]);
   morador:    FormControl = new FormControl(null, [Validators.required]);
+  dataEntrada:    FormControl = new FormControl(null, [Validators.required]);
   
 
 

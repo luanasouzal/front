@@ -39,9 +39,21 @@
             </mat-select>
           </mat-form-field>
           </div>
-        
-          
 
+          <form class="form">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Data entrada</mat-label>
+              <input 
+              [(ngModel)]="chamado.dataEntrada"
+              name="dataEntrada"
+              [formControl]="dataEntrada"
+              required
+              matInput 
+              placeholder="Ex. 21/05/2022">
+            </mat-form-field>
+          </form>
+   
+        
           <form class="form">  
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Deixe uma descrição</mat-label>
@@ -50,6 +62,7 @@
               name="observacoes"
               [formControl]="observacoes"
               required
+              name="observacoes"
               class="observacoes" 
               matInput 
               placeholder="Ex. morador apt 102..."></textarea>
